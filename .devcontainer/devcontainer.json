@@ -1,0 +1,32 @@
+{
+	"name": "Django Dev",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"KevinRose.vsc-python-indent",
+				"batisteo.vscode-django",
+				"wholroyd.jinja",
+				"magicstack.MagicPython",
+				"esbenp.prettier-vscode",
+				"ms-python.black-formatter",
+				"ms-python.isort",
+				"oderwat.indent-rainbow",
+				"ecmel.vscode-html-css",
+				"thebarkman.vscode-djaneiro",
+				"eamodio.gitlens",
+				"TabNine.tabnine-vscode",
+				"SanaAjani.taskrunnercode"
+			],
+			"settings": {}
+		}
+	},
+	"remoteUser": "vscode"
+}
