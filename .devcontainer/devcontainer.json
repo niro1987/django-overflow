@@ -25,7 +25,14 @@
 				"TabNine.tabnine-vscode",
 				"SanaAjani.taskrunnercode"
 			],
-			"settings": {}
+			"settings": {
+				"editor.formatOnPaste": true,
+				"editor.formatOnSave": true,
+				"editor.formatOnType": true,
+				"[html]": {
+					"editor.tabSize": 2
+				}
+			}
 		}
 	},
 	"remoteUser": "vscode"
