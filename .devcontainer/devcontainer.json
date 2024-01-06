@@ -23,13 +23,18 @@
 				"thebarkman.vscode-djaneiro",
 				"eamodio.gitlens",
 				"TabNine.tabnine-vscode",
-				"SanaAjani.taskrunnercode"
+				"SanaAjani.taskrunnercode",
+				"formulahendry.auto-complete-tag",
+				"monosans.djlint"
 			],
 			"settings": {
 				"editor.formatOnPaste": true,
 				"editor.formatOnSave": true,
 				"editor.formatOnType": true,
-				"[html]": {
+				"editor.indentSize": "tabSize",
+				"editor.detectIndentation": false,
+				"[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
+					"editor.defaultFormatter": "monosans.djlint",
 					"editor.tabSize": 2
 				}
 			}
