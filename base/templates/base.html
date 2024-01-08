@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="utf-8" />
     <title>
       {% block title %}
+        {{ page_title }}
       {% endblock title %}
     </title>
     {% block keywords %}
@@ -28,18 +30,21 @@
   </head>
   <body>
     {% load bootstrap5 %}
+    {% block topbar %}
+      {% include "topbar.html" %}
+    {% endblock topbar %}
     <div class="container">
-      {% block navbar %}
-      {% endblock navbar %}
-      {% block welcome %}
-      {% endblock welcome %}
-      {% block messages %}
-        {% if messages %}
-          {% for msg in messages %}<div class="alert alert-{{ msg.level_tag }}" role="alert">{{ msg.message }}</div>{% endfor %}
-        {% endif %}
-      {% endblock messages %}
-      {% block content %}
-      {% endblock content %}
+      <div class="row">
+        <div class="col-2">
+          {% block sidebar %}
+            {% include "sidebar-left.html" %}
+          {% endblock sidebar %}
+        </div>
+        <div class="col">
+          {% block content %}
+          {% endblock content %}
+        </div>
+      </div>
     </div>
     {% block footer %}
     {% endblock footer %}

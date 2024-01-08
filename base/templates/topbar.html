@@ -1,0 +1,59 @@
+{% load app_tags %}
+<header class="bg-dark sticky-top">
+  <div class="container container-fluid">
+    <nav class="navbar navbar-dark navbar-expand-lg">
+      <a class="navbar-brand" href="{% url 'home:index' %}">{{ project_name }}</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mx-auto">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 col-lg-2"
+                   type="search"
+                   placeholder="Search"
+                   aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <ul class="navbar-nav ms-auto">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               id="rightnavDropdown"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
+              <img style="width: 25px"
+                   src="{{ user|gravatar:60 }}"
+                   alt="Gravatar Image"
+                   width="60"
+                   height="60" />
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="rightnavDropdown">
+              <li>
+                <a class="dropdown-item"
+                   href="{% url 'home:index' %}?next={{ request.path }}">Logout</a>
+              </li>
+            </ul>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link"
+               href="{% url 'home:index' %}?next={{ request.path }}">Login</a>
+          </li>
+        {% endif %}
+      </ul>
+      <button class="navbar-toggler ms-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+</header>
