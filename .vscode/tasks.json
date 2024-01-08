@@ -38,12 +38,24 @@
             "command": "${command:python.interpreterPath} manage.py runserver",
             "problemMatcher": []
         },
+        {
+            "label": "custom",
+            "type": "shell",
+            "options": {"cwd": "${workspaceFolder}"},
+            "command": "${command:python.interpreterPath} manage.py ${input:command}",
+            "problemMatcher": []
+        },
     ],
     "inputs": [
         {
             "id": "name",
             "type": "promptString",
             "description": "Name:",
+        },
+        {
+            "id": "command",
+            "type": "promptString",
+            "description": "Command:",
         }
     ]
 }

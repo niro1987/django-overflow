@@ -36,7 +36,15 @@
 				"[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
 					"editor.defaultFormatter": "monosans.djlint",
 					"editor.tabSize": 2
-				}
+				},
+                "djlint.profile": "django",
+                "djlint.ignore": [
+                    "H006" // `img` tag should have `height` and `width` attributes.
+                ],
+                "indentRainbow.ignoreErrorLanguages": [
+                    "django-html"
+                ],
+                "indentRainbow.colorOnWhiteSpaceOnly": true
 			}
 		}
 	},
